@@ -11,15 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-movies-list',
-  imports: [
-    DatePipe,
-    UpperCasePipe,
-    CurrencyPipe,
-    NgOptimizedImage,
-    GenericListComponent,
-    MatButtonModule,
-    MatIconModule,
-  ],
+  imports: [GenericListComponent, MatButtonModule, MatIconModule],
 
   templateUrl: './movies-list.component.html',
   styleUrl: './movies-list.component.css',
