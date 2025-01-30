@@ -6,6 +6,8 @@ import {
   UpperCasePipe,
 } from '@angular/common';
 import { GenericListComponent } from '../../shared/components/generic-list/generic-list.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-movies-list',
@@ -15,6 +17,8 @@ import { GenericListComponent } from '../../shared/components/generic-list/gener
     CurrencyPipe,
     NgOptimizedImage,
     GenericListComponent,
+    MatButtonModule,
+    MatIconModule,
   ],
 
   templateUrl: './movies-list.component.html',
