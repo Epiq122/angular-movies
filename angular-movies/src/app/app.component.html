@@ -1,27 +1,25 @@
-<h2>Example using For</h2>
+<h2>List of movies</h2>
 
 @for (movie of movies; track $index) {
   <div class="movies-container">
     <div>
-      {{ $index + 1 }} <strong> Movie: {{ movie.title | uppercase }}</strong>
+      <img
+        [ngSrc]="movie.poster"
+        [priority]="$index === 0"
+        width="169"
+        height="250"
+        alt=""
+      />
     </div>
-    <div>Release Date: {{ movie.releaseDate | date }}</div>
     <div>
-      Release Date: {{ movie.releaseDate | date: "MMMM-dd-yyyy" | uppercase }}
+      <div>
+        {{ $index + 1 }} <strong> Movie: {{ movie.title | uppercase }}</strong>
+      </div>
+      <div>Release Date: {{ movie.releaseDate | date }}</div>
+      <div>
+        Release Date: {{ movie.releaseDate | date: "MMMM-dd-yyyy" | uppercase }}
+      </div>
+      <div>Price: {{ movie.price | currency }}</div>
     </div>
-    <div>Price: {{ movie.price | currency }}</div>
   </div>
 }
-
-<h2>Example using NgFor</h2>
-
-<div class="movies-container" *ngFor="let movie of movies; let $index = index">
-  <div>
-    {{ $index + 1 }} <strong> Movie: {{ movie.title | uppercase }}</strong>
-  </div>
-  <div>Release Date: {{ movie.releaseDate | date }}</div>
-  <div>
-    Release Date: {{ movie.releaseDate | date: "MMMM-dd-yyyy" | uppercase }}
-  </div>
-  <div>Price: {{ movie.price | currency }}</div>
-</div>
