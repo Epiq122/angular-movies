@@ -25,3 +25,22 @@ export function firstLetterShouldBeUpperCase(): ValidatorFn {
     return null;
   };
 }
+
+export function dateShouldNotBeInTheFuture(): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const value = <Date>control.value;
+    if (!value) return null;
+
+    const today = new Date();
+
+    if (value > today) {
+      return {
+        dateShouldNotBeInTheFuture: {
+          message: 'The date should not be in the future',
+        },
+      };
+    }
+
+    return null;
+  };
+}
