@@ -14,3 +14,18 @@ body {
 h2 {
   padding-top: 20px;
 }
+
+.buttons-container button {
+  margin-right: 1rem;
+}
+
+mat-form-field {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 1rem;
+  display: block !important;
+}
+
+.buttons-container {
+  margin-top: 1rem;
+}
