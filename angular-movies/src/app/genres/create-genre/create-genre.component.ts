@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 
 import { Router, RouterLink } from '@angular/router';
 import { MatButton, MatButtonModule } from '@angular/material/button';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
@@ -23,8 +23,16 @@ export class CreateGenreComponent {
   private formBuilder = inject(FormBuilder);
 
   form = this.formBuilder.group({
-    name: [''],
+    name: ['', { validators: [Validators.required] }],
   });
+
+  getErrorMessagesForName(): string {
+    let field = this.form.controls.name;
+
+    if (field.hasError('required')) return 'The name field is required';
+
+    return '';
+  }
 
   saveChanges() {
     // save changes.
