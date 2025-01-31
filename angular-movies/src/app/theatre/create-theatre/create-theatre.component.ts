@@ -4,9 +4,9 @@ import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-index-theaters',
+  selector: 'app-create-theater',
   imports: [MatButton, MatIcon, RouterLink],
-  templateUrl: './index-theaters.component.html',
-  styleUrl: './index-theaters.component.css',
+  templateUrl: './create-theatre.component.html',
+  styleUrl: './create-theatre.component.css',
 })
-export class IndexTheatersComponent {}
+export class CreateTheatreComponent {}
